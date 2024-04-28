@@ -30,7 +30,6 @@ const App = () => {
   const addTask = async () => {
     try {
       if (editMode) {
-        // Edit existing task
         const updatedTasks = tasks.map((task) =>
           task.id === editTaskId ? { ...task, name, lastName, email, password } : task
         );
@@ -39,7 +38,6 @@ const App = () => {
         setEditMode(false);
         setEditTaskId(null);
       } else {
-        // Add new task
         const newTask = { id: Date.now(), name, lastName, email, password };
         const updatedTasks = [...tasks, newTask];
         await FileSystem.writeAsStringAsync(filePath, JSON.stringify(updatedTasks));
