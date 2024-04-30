@@ -36,7 +36,6 @@ export default function CameraScreen() {
       quality: 1,
     });
     if (!result.cancelled && result.assets && result.assets.length > 0) {
-      // Usamos el primer elemento de assets ya que solo se selecciona una imagen
       setCapturedImage(result.assets[0].uri);
     }
   };

@@ -52,7 +52,7 @@ const App = () => {
     }
   };
 
-  const editTask = (id) => {
+  const editData = (id) => {
     const taskToEdit = tasks.find((task) => task.id === id);
     setName(taskToEdit.name);
     setLastName(taskToEdit.lastName);
@@ -62,7 +62,7 @@ const App = () => {
     setEditTaskId(id);
   };
 
-  const deleteTask = async (id) => {
+  const deleteData = async (id) => {
     try {
       const updatedTasks = tasks.filter((item) => item.id !== id);
       await FileSystem.writeAsStringAsync(filePath, JSON.stringify(updatedTasks));
